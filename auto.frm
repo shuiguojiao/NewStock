@@ -106,8 +106,10 @@ Private Sub Form_Load()
         sLabelName(0) = "买入确认"
         sFormName(1) = "委托买入"
         sLabelName(1) = "确定(Y)"
+        
+        '同花顺，Y有下划线的
         sFormName(2) = "委托确认"
-        sLabelName(2) = "是(Y)"
+        sLabelName(2) = "是(&Y)"
         
     End If
 End Sub

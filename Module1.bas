@@ -51,7 +51,7 @@ Public Function EnumWindowsProc(ByVal hWnd As Long, ByVal lParam As Long) As Boo
             tSubWnd = FindWindowEx(hWnd, 0, vbNullString, sFormName(i))
             
             If tSubWnd > 0 Then
-                Form1.List1.AddItem t & " - " & (arrayIndex + 1) & " s- " & Hex(hWnd)
+                Form1.List1.AddItem (arrayIndex + 1) & ":" & sFormName(i) & " - " & "s" & Hex(hWnd)
                 'find button
                 tSubWnd = FindWindowEx(hWnd, 0, vbNullString, sLabelName(i))
                 If tSubWnd > 0 Then 'find button
@@ -62,7 +62,7 @@ Public Function EnumWindowsProc(ByVal hWnd As Long, ByVal lParam As Long) As Boo
                 End If
             End If
         ElseIf StrComp(sFormName(i), t, vbTextCompare) = 0 Then  'windows label + button label
-            Form1.List1.AddItem t & " - " & (arrayIndex + 1) & " - " & Hex(hWnd)
+            Form1.List1.AddItem (arrayIndex + 1) & ":" & t & " - " & Hex(hWnd)
             
             'find button
             tSubWnd = FindWindowEx(hWnd, 0, vbNullString, sLabelName(i))
